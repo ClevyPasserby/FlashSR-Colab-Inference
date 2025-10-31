@@ -94,10 +94,10 @@ def process_audio_fast(input_path, output_path, overlap, flashsr, device):
     audio, sr = UtilAudio.read(input_path, sample_rate=48000)
     audio = audio.to(device, non_blocking=True)
 
-    C = 245760  # chunk_size
+    C = 1228800  # chunk_size
     N = overlap
     step = C // N
-    fade_size = C // 10
+    fade_size = C // 8
     print(f"N = {N} | C = {C} | step = {step} | fade_size = {fade_size}")
 
     border = C - step
