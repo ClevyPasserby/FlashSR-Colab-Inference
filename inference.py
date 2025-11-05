@@ -97,7 +97,7 @@ def process_audio_fast(input_path, output_path, overlap, flashsr, device):
     C = 1228800  # chunk_size
     N = overlap
     step = C // N
-    fade_size = C // 8
+    fade_size = C // 6
     print(f"N = {N} | C = {C} | step = {step} | fade_size = {fade_size}")
 
     border = C - step
